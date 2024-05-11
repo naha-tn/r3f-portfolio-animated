@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
-const LINE_NB_POINTS = 15000
+const LINE_NB_POINTS = 1000
 const CURVE_DISTANCE = 20
 
 export default function Path() 
@@ -47,6 +47,8 @@ export default function Path()
     // Set camera to follow the path
     useFrame((state, delta) => 
     {
+        const scrollOffset = scroll.offset
+
         const curPointIdx = Math.min(
             Math.round(scroll.offset * LINE_NB_POINTS + 1),
             LINE_NB_POINTS
@@ -83,7 +85,11 @@ export default function Path()
                 }
             ]}    
         />
-        <meshStandardMaterial color={'#DEAC80'} transparent opacity={0.5} />
+        <meshStandardMaterial 
+            color={'#DEAC80'} 
+            transparent 
+            opacity={0.5} 
+        />
     </mesh>
     </>
 }

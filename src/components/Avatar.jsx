@@ -52,7 +52,6 @@ export function Avatar(props) {
       avatarPosition.copy(state.camera.position)
       avatarPosition.y = -1
       avatarPosition.z -= 16
-      avatarPosition.x += 0.4
 
       smoothAvatarPosition.lerp(avatarPosition, delta * 24)
 

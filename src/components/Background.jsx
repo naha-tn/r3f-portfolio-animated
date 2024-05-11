@@ -6,6 +6,10 @@ import * as THREE from 'three'
 
 export const Background = () => {
 
+    const colorA = '#F5DAD2'
+    const colorB = '#BACD92'
+    const start = 0.2
+    const end = -0.45
     const background = useRef()
 
     useFrame((state) => 
@@ -14,23 +18,55 @@ export const Background = () => {
     })
 
     return <>
-        <group ref={background}>
-            <Environment preset="sunset" />
+    {/* <group ref={background}>
+        <Sphere scale={ [100, 100, 100] } rotation-y={ Math.PI / 2 }>
+            <LayerMaterial
+                color='#ffffff'
+                side={THREE.BackSide}
+            >
+                <Gradient 
+                    colorA={colorA} 
+                    colorB={colorB} 
+                    axes="y" 
+                    start={start}
+                    end={end}
+                />
+            </LayerMaterial>
+        </Sphere>
+        <Environment resolution={256} background >
             <Sphere scale={ [100, 100, 100] } rotation-y={ Math.PI / 2 }>
                 <LayerMaterial
-                    lighting="physical"
-                    transmission={1}
+                    color='#ffffff'
                     side={THREE.BackSide}
                 >
                     <Gradient 
-                        colorA={'#F5DAD2'} 
-                        colorB={'#BACD92'} 
+                        colorA={colorA} 
+                        colorB={colorB} 
                         axes="y" 
-                        start={0.2}
-                        end={-0.45}
+                        start={start}
+                        end={end}
                     />
                 </LayerMaterial>
             </Sphere>
-        </group>
+        </Environment>
+    </group> */}
+    <group ref={background}>
+        <Environment preset="sunset" />
+        <Sphere scale={ [100, 100, 100] } rotation-y={ Math.PI / 2 }>
+            <LayerMaterial
+                lighting="physical"
+                transmission={1}
+                side={THREE.BackSide}
+            >
+                <Gradient 
+                    colorA={colorA} 
+                    colorB={colorB} 
+                    axes="y" 
+                    start={start}
+                    end={end}
+                />
+            </LayerMaterial>
+        </Sphere>
+    </group>
     </>
 }
