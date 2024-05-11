@@ -1,63 +1,36 @@
-import { useMemo } from "react";
 import { Avatar } from "./components/Avatar";
 import * as THREE from 'three'
-
-const LINE_NB_POINTS = 150
+import { Background } from './components/Background.jsx'
+import Path from "./components/Path.jsx";
+import { ContactShadows } from "@react-three/drei";
 
 export default function Scene()
 {
-    const curve = useMemo(() => { 
-        return new THREE.CatmullRomCurve3([
-            new THREE.Vector3(0, 0, 0),
-            new THREE.Vector3(0, 0, -10),
-            new THREE.Vector3(-2, 0, -20),
-            new THREE.Vector3(-3, 0, -30),
-            new THREE.Vector3(0, 0, -40),
-            new THREE.Vector3(5, 0, -50),
-            new THREE.Vector3(7, 0, -60),
-            new THREE.Vector3(5, 0, -70),
-            new THREE.Vector3(0, 0, -80),
-            new THREE.Vector3(0, 0, -90),
-            new THREE.Vector3(0, 0, -100)
-        ],
-        false,
-        "catmullrom",
-        0.5)
-    }, [])
+    
 
+    // // Create Scrolling
+    // const cameraGroup = useRef()
+    // const avatar = useRef()
+    // const scroll = useScroll()
 
-    const linePoints = useMemo(() => {
-        return curve.getPoints(LINE_NB_POINTS)
-    }, [curve])
-
-    const shape = useMemo(() => {
-        const shape = new THREE.Shape()
-        shape.moveTo(0, -1)
-        shape.lineTo(0, 1)
-
-        return shape
-    })
-
+    
 
     return <>
+        {/* <group ref={cameraGroup}> */}
+        <Background />
+        {/* <PerspectiveCamera  
+            fov= {45}
+            near= {0.1}
+            far= {200}
+            position={[ 0, 5, 16 ]}
+            makeDefault
+        /> */}
         <Avatar 
-            position={[0, -1, -0.5]} 
+            position={[0.4, -1, 0]} 
             scale={0.2}
             castShadow
         />
-        <mesh position-y={ -1} receiveShadow>
-            <extrudeGeometry 
-                args={[
-                    shape,
-                    {
-                        steps: LINE_NB_POINTS,
-                        bevelEnabled: false,
-                        extrudePath: curve
-                    }
-                ]}    
-            />
-            <meshStandardMaterial color={'#DEAC80'} transparent opacity={0.5} />
-        </mesh>
+        <Path />
 
         <mesh receiveShadow position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
             <planeGeometry />
