@@ -1,15 +1,14 @@
 import { Avatar } from "./components/Avatar";
-import * as THREE from 'three'
 import { Background } from './components/Background.jsx'
 import Path from "./components/Path.jsx";
 import { Text } from "@react-three/drei";
 import { Tree1 } from "./components/Tree1.jsx";
+import Intro from "./components/Introduction.jsx";
 
 const Y_POS = -1
 
 export default function Scene()
 {
-    
     return <>
         <Background />
         <Avatar 
@@ -17,12 +16,8 @@ export default function Scene()
             castShadow
         />
         <Path />
-        <Text
-            color="#A5DD9B"
-        >
-            Welcome to my world! {"\n"}
-            Have a seat and enjoy the ride!
-        </Text>
+        {/* Text */}
+        <Intro />
         <Tree1 
             opacity={0.7}
             scale={0.9}

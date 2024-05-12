@@ -8,7 +8,7 @@ export const Background = () => {
 
     const colorA = '#F5DAD2'
     const colorB = '#BACD92'
-    const start = 0.2
+    const start = 0.3
     const end = -0.45
     const background = useRef()
 

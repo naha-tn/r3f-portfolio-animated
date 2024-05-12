@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
-const LINE_NB_POINTS = 1000
+const LINE_NB_POINTS = 10000
 const CURVE_DISTANCE = 20
 
 export default function Path() 
