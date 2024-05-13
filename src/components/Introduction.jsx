@@ -1,6 +1,7 @@
 import { Text } from "@react-three/drei";
 import { useMemo } from "react";
 import * as THREE from 'three'
+import { fadeOnBeforeCompile, fadeOnBeforeCompileFlat } from "../utils/fadeMaterials";
 
 const TextSection = ({title, subtitle, ...props}) => {
     return (
@@ -16,6 +17,7 @@ const TextSection = ({title, subtitle, ...props}) => {
                     font={"./fonts/bebas-neue-v9-latin-regular.woff"}
                 >
                     { title }
+                    <meshStandardMaterial onBeforeCompile={fadeOnBeforeCompileFlat}/>
                 </Text>
             )}
             <Text
@@ -28,6 +30,7 @@ const TextSection = ({title, subtitle, ...props}) => {
                 font={"./fonts/bebas-neue-v9-latin-regular.woff"}
             >
                 {subtitle}
+                <meshStandardMaterial onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
     )
@@ -42,7 +45,7 @@ export default function Intro()
 Where courage finds its voice...`
         }, 
     {
-        position: new THREE.Vector3(-3, 0, -20),
+        position: new THREE.Vector3(-3, 0, -50),
         title: "The beginning",
         subtitle: `Here's where Mom found me.
 Think I'm kidding? Yeah`

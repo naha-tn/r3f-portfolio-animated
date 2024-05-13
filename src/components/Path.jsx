@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import * as THREE from 'three'
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { fadeOnBeforeCompile } from '../utils/fadeMaterials'
 
 const LINE_NB_POINTS = 10000
 const CURVE_DISTANCE = 20
@@ -86,6 +87,7 @@ export default function Path()
             ]}    
         />
         <meshStandardMaterial 
+            onBeforeCompile={fadeOnBeforeCompile}
             color={'#DEAC80'} 
             transparent 
             opacity={0.5} 
