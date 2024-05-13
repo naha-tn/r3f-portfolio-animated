@@ -9,7 +9,6 @@ const Y_POS = -1
 
 export default function Scene()
 {
-    
     return <>
         <Background />
         <Avatar 

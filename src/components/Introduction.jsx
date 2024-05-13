@@ -42,7 +42,7 @@ export default function Intro()
         return [{
             position: new THREE.Vector3(-3, 1, -10),
             subtitle: `Venture forth into the unknown!
-Where courage finds its voice...`
+Where courage finds its voice... LET'S SCROLL!`
         }, 
     {
         position: new THREE.Vector3(-3, 0, -50),
