@@ -4,11 +4,12 @@ import Path from "./components/Path.jsx";
 import { Tree1 } from "./components/Tree1.jsx";
 import Intro from "./components/Introduction.jsx";
 import { useRef } from "react";
+import  Garden  from "./components/House/Garden.jsx";
 
 
 const Y_POS = -1
 
-export default function Scene()
+export default function Scene() 
 {
     const world = useRef()
 
@@ -58,6 +59,7 @@ export default function Scene()
                 rotation-y= {Math.PI / 3}
                 position={[0, Y_POS, -100]}
             />
+            <Garden/>
             <mesh receiveShadow position-y={ - 0.99 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
                 <planeGeometry />
                 <meshStandardMaterial color="greenyellow" />

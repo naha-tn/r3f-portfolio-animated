@@ -1,7 +1,7 @@
 import { Text } from "@react-three/drei";
 import { useMemo } from "react";
 import * as THREE from 'three'
-import { fadeOnBeforeCompile, fadeOnBeforeCompileFlat } from "../utils/fadeMaterials";
+import { fadeOnBeforeCompileFlat } from "../utils/fadeMaterials";
 
 const TextSection = ({title, subtitle, ...props}) => {
     return (
@@ -48,7 +48,7 @@ Where courage finds its voice... LET'S SCROLL!`
         position: new THREE.Vector3(-3, 0, -50),
         title: "The beginning",
         subtitle: `Here's where Mom found me.
-Think I'm kidding? Yeah`
+Think I'm kidding? Yeah Thank you Quaternius for all models`
     }]
     }, [])
 
