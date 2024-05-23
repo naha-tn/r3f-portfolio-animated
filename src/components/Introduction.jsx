@@ -25,7 +25,7 @@ const TextSection = ({title, subtitle, ...props}) => {
                 anchorX={'left'}
                 anchorY={'top'}
                 position-y={-0.66}
-                fontSize={0.22}
+                fontSize={0.3}
                 maxWidth={2.5}
                 font={"./fonts/bebas-neue-v9-latin-regular.woff"}
             >
@@ -40,7 +40,7 @@ export default function Intro()
 {
     const textSections = useMemo(() => {
         return [{
-            position: new THREE.Vector3(-3, 1, -10),
+            position: new THREE.Vector3(-1.5, 5, 5),
             subtitle: `Venture forth into the unknown!
 Where courage finds its voice... LET'S SCROLL!`
         }, 

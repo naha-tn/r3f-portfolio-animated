@@ -11,3 +11,18 @@ body,
     height: 100%;
     background: ivory;
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* TRACK */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* HANDLE */
+::-webkit-scrollbar-thumb {
+  background: white;
+  height: 10%;
+}

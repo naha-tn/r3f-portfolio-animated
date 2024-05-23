@@ -1,7 +1,5 @@
-import { useHelper } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
-import { DirectionalLightHelper } from "three"
 
 export default function Lights()
 {
@@ -15,8 +13,6 @@ export default function Lights()
         light.current.target.position.z = state.camera.position.z - 16
         light.current.target.updateMatrixWorld()
     })
-
-    useHelper(light, DirectionalLightHelper, 1, 'red')
 
     return <>
         <directionalLight
